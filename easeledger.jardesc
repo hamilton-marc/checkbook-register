@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+    <jar path="C:/Projects/UnionHills/CheckbookRegister/source/lib/easeledger.jar"/>
+    <options overwrite="false" compress="true" exportErrors="true"
+        exportWarnings="true" saveDescription="true"
+        descriptionLocation="/EaseLedger/easeledger.jardesc"
+        useSourceFolders="false" buildIfNeeded="true"/>
+    <manifest manifestVersion="1.0" usesManifest="true"
+        reuseManifest="false" saveManifest="true"
+        generateManifest="true" manifestLocation="/EaseLedger/Manifest" mainClassHandleIdentifier="=EaseLedger/src&lt;com.uhills.finance.easetax.main{ApplicationMain.java[ApplicationMain">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false">
+        <javaElement handleIdentifier="=EaseLedger/src"/>
+    </selectedElements>
+</jardesc>

@@ -1,0 +1,26 @@
+Serialization Ids 
+Tue 04/07/2009 
+12:09 AM
+ 
+com.uhills.finance.easetax.core.Address:    static final long serialVersionUID = -5628996440593203446L;
+com.uhills.finance.easetax.core.Category:    static final long serialVersionUID = -901499820839062486L;
+com.uhills.finance.easetax.core.Company:    static final long serialVersionUID = 8217562001131004732L;
+com.uhills.finance.easetax.core.CompanyType:    static final long serialVersionUID = -894277480337336717L;
+com.uhills.finance.easetax.core.Contact:    static final long serialVersionUID = -2543309600988080254L;
+com.uhills.finance.easetax.core.ContactType:    static final long serialVersionUID = 865360427675980525L;
+com.uhills.finance.easetax.core.DateFilterType:    static final long serialVersionUID = 7897646342865399497L;
+com.uhills.finance.easetax.core.Report:    static final long serialVersionUID = 9135413111911729758L;
+com.uhills.finance.easetax.core.ReportType:    static final long serialVersionUID = 417336433392067889L;
+com.uhills.finance.easetax.core.TaxCode:    static final long serialVersionUID = -2119018251303836875L;
+com.uhills.finance.easetax.core.Transaction:    static final long serialVersionUID = 4401115158523463797L;
+com.uhills.finance.easetax.core.TransactionType:    static final long serialVersionUID = 5854090171801998229L;
+com.uhills.finance.easetax.core.JobCode:    static final long serialVersionUID = 6740722502372760734L;
+com.uhills.finance.easetax.persist.memory.JobCodeTable:    static final long serialVersionUID = -126567180215807725L;
+com.uhills.finance.easetax.persist.memory.CategoryTable:    static final long serialVersionUID = -6805908426860153995L;
+com.uhills.finance.easetax.persist.memory.CompanyTable:    static final long serialVersionUID = -6555370849819656878L;
+com.uhills.finance.easetax.persist.memory.ContactTable:    static final long serialVersionUID = -6864940595631393853L;
+com.uhills.finance.easetax.persist.memory.ReportTable:    static final long serialVersionUID = 7006162378246568231L;
+com.uhills.finance.easetax.persist.memory.TransactionTable:    static final long serialVersionUID = -8981313428816825700L;
+com.uhills.finance.easetax.persist.file.FileDatabase:    static final long serialVersionUID = 3557407361459322418L;
+com.uhills.finance.easetax.filtersort.SortCriteria:    static final long serialVersionUID = 6910108056373688590L;
+com.uhills.finance.easetax.filtersort.FilterCriteria:    static final long serialVersionUID = 2463871877976562992L;

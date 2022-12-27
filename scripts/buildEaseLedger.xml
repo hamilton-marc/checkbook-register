@@ -1,0 +1,80 @@
+<project name="EaseLedger" default="default">
+
+    <property name="src.dir"                value="../src"/>
+    <property name="bin.dir"                value="../bin"/>
+    <property name="root.dir"               value="/Java"/>
+
+    <property name="eclipse.dir"            value="${root.dir}/eclipse"/>
+    <property name="eclipse.plugins.dir"    value="${eclipse.dir}/plugins"/>
+
+    <property name="jfreereport.dir"        value="${root.dir}/jfreereport"/>
+    <property name="jfreereport.lib.dir"    value="${jfreereport.dir}/lib"/>
+
+    <property name="utility.dir"            value="../../Utility"/>
+
+    <property name="debug"      value="true"/>
+
+    <path id="easeledger.classpath">
+        <fileset dir="utility.dir">
+            <include name="lib/*utils*.jar"/>
+        </fileset>
+
+        <fileset dir="jfreereport.dir">
+            <include name="jfreereport-all*.jar"/>
+        </fileset>
+
+        <fileset dir="jfreereport.lib.dir">
+            <include name="bsh*.jar"/>
+            <include name="gnujaxp*.jar"/>
+            <include name="itext*.jar"/>
+            <include name="jcommon*.jar"/>
+            <include name="pixie*.jar"/>
+            <include name="poi*.jar"/>
+        </fileset>
+
+        <fileset dir="${root.dir}">
+            <include name="jaf/activation*.jar"/>
+            <include name="javamail/mail*.jar"/>
+            <include name="jfreereport-all*.jar"/>
+            <include name="jaf/activation*.jar"/>
+            <include name="jaf/activation*.jar"/>
+        </fileset>
+
+        <fileset dir="${eclipse.plugins.dir}">
+            <include name="org.eclipse.jface*.jar"/>
+            <include name="org.eclipse.core.runtime*.jar"/>
+            <include name="org.eclipse.swt.win32*.jar"/>
+            <include name="org.eclipse.ui.workbench*.jar"/>
+            <include name="org.eclipse.osgi*.jar"/>
+            <include name="org.eclipse.core.boot*.jar"/>
+        </fileset>
+        fi
+    </path>
+
+    <patternset id="src.pattern">
+        <!-- exclude factories from the common jar -->
+        <exclude name="com/uhills/finance/easetax/graphics/icons/**"/>
+        <exclude name="com/uhills/finance/easetax/graphics/images/**"/>
+    </patternset>
+
+    <target name="compile">
+        <mkdir dir="${bin.dir}"/>
+        <javac destdir="${bin.dir}" debug="${debug}" encoding="ISO-8859-1">
+            <src path="${src.dir}"/>
+            <patternset refid="src.pattern"/>
+            <classpath refid="easeledger.classpath"/>
+        </javac>
+
+        <!-- copy the property files -->
+        <copy todir="${framework.common.classes}">
+            <fileset dir="${core.src.dir}">
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="default">
+        <ant target="compile"/>
+        <ant target="package"/>
+    </target>
+</project>

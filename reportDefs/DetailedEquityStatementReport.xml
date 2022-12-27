@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE report PUBLIC "-//JFreeReport//DTD report definition//EN//simple"
+                        "http://jfreereport.sourceforge.net/report.dtd">
+
+<report name="EquityStatement"
+        orientation="portrait"
+        pageformat="LETTER"
+        topmargin="20"
+        leftmargin="20"
+        bottommargin="20"
+        rightmargin="20">
+
+    <reportheader height="70"
+                  fontname="sansserif"
+                  fontstyle="bold"
+                  fontsize="14">
+
+        <date-field x="0"
+                    y="0"
+                    width="70"
+                    height="10"
+                    alignment="left"
+                    fontsize="10"
+                    fontstyle="plain"
+                    format="h:mm a"
+                    fieldname="report.date"/>
+
+        <date-field x="0"
+                    y="12"
+                    width="70"
+                    height="10"
+                    alignment="left"
+                    fontsize="10"
+                    fontstyle="plain"
+                    format="M/d/yyyy"
+                    fieldname="report.date"/>
+
+        <string-field x="0"
+                      y="0"
+                      width="100%"
+                      height="14"
+                      fsunderline="false"
+                      vertical-alignment="top"
+                      alignment="center"
+                      fieldname="company.name"/>
+
+        <string-field x="0"
+                      y="20"
+                      width="100%"
+                      height="14"
+                      fsunderline="false"
+                      vertical-alignment="top"
+                      alignment="center"
+                      fieldname="report.title"/>
+
+        <string-field x="0"
+                      y="40"
+                      width="100%"
+                      height="14"
+                      fontsize="12"
+                      fontstyle="plain"
+                      fsunderline="false"
+                      vertical-alignment="top"
+                      alignment="center"
+                      fieldname="report.date_range"/>
+    </reportheader>
+
+    <groups>
+        <group name="group_all">
+            <groupheader height="30"
+                         fontname="sansserif"
+                         fontstyle="bold"
+                         fontsize="10"
+                         repeat="true">
+<!--
+                <label x="200"
+                       y="0"
+                       width="200"
+                       height="100%"
+                       fsunderline="false"
+                       vertical-alignment="top"
+                       alignment="right">(Insert time range here)</label>
+-->
+                <string-field x="200"
+                              y="0"
+                              width="200"
+                              height="100%"
+                              fsunderline="false"
+                              vertical-alignment="top"
+                              alignment="right"
+                              fieldname="report.date_range"/>
+
+                <line x1="300" y1="18" x2="400" y2="18" color="black" weight="2.0"/>
+
+                <label x="20"
+                       y="20"
+                       width="200"
+                       height="100%"
+                       fsunderline="false"
+                       vertical-alignment="top"
+                       alignment="left">Ordinary Contributions/Withdrawls</label>
+            </groupheader>
+            <groupfooter height="60"
+                         fontname="sansserif"
+                         fontstyle="bold"
+                         fontsize="10"
+                         repeat="true">
+
+                <line x1="300" y1="0" x2="400" y2="0" color="black" weight="1.0"/>
+
+                <label x="20"
+                       y="14"
+                       width="100"
+                       height="100%"
+                       fsunderline="false"
+                       vertical-alignment="top"
+                       alignment="left">Net Ordinary Equity</label>
+
+                <number-field x="300"
+                              y="14"
+                              width="100"
+                              height="100%"
+                              alignment="right"
+                              format="#,##0.00"
+                              vertical-alignment="top"
+                              fieldname="sum_net_income"/>
+
+                <line x1="300" y1="28" x2="400" y2="28" color="black" weight="1.0"/>
+
+                <label x="0"
+                       y="40"
+                       width="100"
+                       height="100%"
+                       fsunderline="false"
+                       vertical-alignment="top"
+                       alignment="left">Net Equity</label>
+
+                <number-field x="300"
+                              y="40"
+                              width="100"
+                              height="100%"
+                              alignment="right"
+                              format="#,##0.00"
+                              vertical-alignment="top"
+                              fieldname="sum_net_income"/>
+
+                <line x1="300" y1="52" x2="400" y2="52" color="black" weight="1.0"/>
+                <line x1="300" y1="54" x2="400" y2="54" color="black" weight="1.0"/>
+            </groupfooter>
+        </group>
+        <group name="group_type">
+            <groupheader height="26"
+                         fontname="sansserif"
+                         fontstyle="bold"
+                         fontsize="10"
+                         repeat="true">
+
+                <string-field x="40"
+                              y="12"
+                              width="200"
+                              height="100%"
+                              alignment="left"
+                              vertical-alignment="top"
+                              fieldname="Type"/>
+            </groupheader>
+            <fields>
+                <field>Type</field>
+            </fields>
+            <groupfooter height="18"
+                         fontname="sansserif"
+                         fontstyle="bold"
+                         fontsize="10"
+                         repeat="true">
+
+                <line x1="300" y1="0" x2="400" y2="0" color="black" weight="1.0"/>
+
+                <label x="40"
+                       y="6"
+                       width="30"
+                       height="100%"
+                       fsunderline="false"
+                       vertical-alignment="top"
+                       alignment="left">Total</label>
+
+                <string-field x="67"
+                              y="6"
+                              width="180"
+                              height="100%"
+                              alignment="left"
+                              vertical-alignment="top"
+                              fieldname="Type"/>
+
+                <number-field x="300"
+                              y="6"
+                              width="100"
+                              height="100%"
+                              alignment="right"
+                              format="#,##0.00"
+                              vertical-alignment="top"
+                              fieldname="sum_type"/>
+
+            </groupfooter>
+        </group>
+        <group name="group_account">
+            <groupheader height="18"
+                         fontname="sansserif"
+                         fontstyle="bold"
+                         fontsize="10"
+                         repeat="true">
+
+                <string-field x="60"
+                              y="0"
+                              width="200"
+                              height="100%"
+                              alignment="left"
+                              vertical-alignment="middle"
+                              fieldname="Account"/>
+
+                <number-field x="300"
+                              y="0"
+                              width="100"
+                              height="100%"
+                              alignment="right"
+                              format="#,##0.00"
+                              vertical-alignment="middle"
+                              fieldname="sum_amount"/>
+            </groupheader>
+            <fields>
+                <field>Type</field>
+                <field>Account</field>
+            </fields>
+        </group>
+    </groups>
+
+    <items height="12"
+           fontname="sansserif"
+           fontstyle="plain"
+           fontsize="10"
+           vertical-alignment="middle">
+<!--
+        <string-field x="40"
+                      y="0"
+                      width="50"
+                      height="100%"
+                      alignment="left"
+                      fieldname="Number/Code"/>
+-->
+        <date-field x="80"
+                    y="0"
+                    width="70"
+                    height="100%"
+                    alignment="left"
+                    format="MM/dd/yyyy"
+                    fieldname="Date"/>
+
+        <string-field x="150"
+                      y="0"
+                      width="150"
+                      height="100%"
+                      alignment="left"
+                      fieldname="Contact"/>
+
+        <number-field x="300"
+                      y="0"
+                      width="100"
+                      height="100%"
+                      alignment="right"
+                      format="#,##0.00"
+                      fieldname="Amount"/>
+
+    </items>
+
+    <pagefooter height="24"
+                fontname="sansserif"
+                fontsize="10"
+                onfirstpage="true"
+                onlastpage="true">
+
+        <number-field format="Page 0"
+                      x="0"
+                      y="0"
+                      width="100%"
+                      height="100%"
+                      alignment="center"
+                      vertical-alignment="middle"
+                      fieldname="page_function"/>
+    </pagefooter>
+
+    <functions>
+        <property-ref name="report.date"/>
+        <property-ref name="report.title"/>
+        <property-ref name="company.name"/>
+        <property-ref name="report.date_range"/>
+        <function name="sum_amount" class="org.jfree.report.function.TotalGroupSumFunction">
+            <properties>
+                <property name="field">Amount</property>
+                <property name="group">group_account</property>
+            </properties>
+        </function>
+        <function name="sum_type" class="org.jfree.report.function.TotalGroupSumFunction">
+            <properties>
+                <property name="field">Amount</property>
+                <property name="group">group_type</property>
+            </properties>
+        </function>
+        <function name="sum_net_income" class="org.jfree.report.function.TotalGroupSumFunction">
+            <properties>
+                <property name="field">AccountingValue</property>
+                <property name="group">group_all</property>
+            </properties>
+        </function>
+        <!-- The current page number. -->
+        <function name="page_function" class="org.jfree.report.function.PageFunction"/>
+    </functions>
+</report>
